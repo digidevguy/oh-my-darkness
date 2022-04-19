@@ -10,6 +10,10 @@ const CallToAction = () => {
 				left='50%'
 				transform='translate(-50%,-50%)'
 				zIndex={1}
+				p={10}
+				bg='whiteAlpha.400'
+				rounded={15}
+				spacing={5}
 			>
 				<Heading color='white'>Join us on Discord!</Heading>
 				<Button>Discord</Button>

@@ -14,7 +14,7 @@ export default function Home() {
 				<a>Three</a>
 			</Flex>
 			<Banner
-				title='Title'
+				title='Oh My Darkness'
 				subtitle='Subtitle'
 				src='/images/web/x1a6AVmvF6HfxbHBN7YzjtbQDkOgFXw3rLziPwX9PIw.webp'
 				width={3764}

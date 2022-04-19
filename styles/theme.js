@@ -3,8 +3,9 @@ import { theme as chakraTheme } from '@chakra-ui/react';
 
 const fonts = {
 	...chakraTheme.fonts,
-	heading: 'Questrial, sans-serif',
-	body: 'Cutive Mono, monospace',
+	heading: 'Lato, sans-serif',
+	// body: 'Cutive Mono, monospace',
+	body: 'Questrial, sans-serif',
 };
 
 export const theme = extendTheme({ fonts });

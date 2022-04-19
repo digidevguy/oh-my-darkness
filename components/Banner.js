@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Box, Flex } from '@chakra-ui/react';
+import { Box, Divider, Flex, Heading, Text, VStack } from '@chakra-ui/react';
 
 const Banner = ({ title, subtitle, src, width, height }) => {
 	return (
@@ -17,9 +17,11 @@ const Banner = ({ title, subtitle, src, width, height }) => {
 				zIndex={3}
 				flexDirection='column'
 				color='white'
+				gap={2}
 			>
-				<h1>{title}</h1>
-				<p>{subtitle}</p>
+				<Heading>{title}</Heading>
+				<Divider />
+				<Text>{subtitle}</Text>
 			</Flex>
 			<Box w='full' pos='relative'>
 				<Box
