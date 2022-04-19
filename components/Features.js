@@ -14,7 +14,7 @@ import { BsFillSuitDiamondFill } from 'react-icons/bs';
 const Features = () => {
 	return (
 		<Flex>
-			<Box w='full'>
+			<Box w='full' display={['none', 'inherit']}>
 				<Image
 					src='/images/web/3913755-ffxivendwalker_t2.jpeg'
 					width={1200}

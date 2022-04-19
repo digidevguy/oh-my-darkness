@@ -15,8 +15,10 @@ const CallToAction = () => {
 				rounded={15}
 				spacing={5}
 			>
-				<Heading color='white'>Join us on Discord!</Heading>
-				<Button>Discord</Button>
+				<Heading size='lg' color='white' textAlign='center'>
+					Join us on Discord!
+				</Heading>
+				<Button colorScheme='purple'>Discord</Button>
 			</VStack>
 			<Box w='full' h='auto'>
 				<Image
