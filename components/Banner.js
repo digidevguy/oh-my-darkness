@@ -14,7 +14,7 @@ const Banner = ({ title, subtitle, src, width, height }) => {
 				pos='absolute'
 				left={['10%', '25%']}
 				top={['55%', '60%']}
-				zIndex={3}
+				zIndex={2}
 				flexDirection='column'
 				color='white'
 				gap={2}
@@ -32,7 +32,7 @@ const Banner = ({ title, subtitle, src, width, height }) => {
 					right={0}
 					bg='black'
 					opacity={0.4}
-					zIndex={2}
+					zIndex={1}
 				></Box>
 				<Image src={src} width={width} height={height} layout='responsive' />
 			</Box>

@@ -1,4 +1,6 @@
-import { Divider, Flex, Stack, Text } from '@chakra-ui/react';
+import { Divider, Flex, IconButton, Stack, Text } from '@chakra-ui/react';
+import { FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { HiOutlineMail } from 'react-icons/hi';
 
 const Footer = () => {
 	return (
@@ -30,11 +32,11 @@ const Footer = () => {
 					<Text>This site was developed by INSERT LINK</Text>
 					<Text>For business inquiries, please use the following methods</Text>
 				</Flex>
+				<Divider orientation='vertical' />
 				<Stack direction={['coloumn', 'row']} spacing={4} align='center'>
-					<Text>Twitter</Text>
-					<Text>LinkedIn</Text>
-					<Text>Personal Website</Text>
-					<Text>Email</Text>
+					<IconButton icon={<FaTwitter />} variant='ghost' />
+					<IconButton icon={<FaLinkedin />} variant='ghost' />
+					<IconButton icon={<HiOutlineMail />} variant='ghost' />
 				</Stack>
 			</Flex>
 		</Flex>
