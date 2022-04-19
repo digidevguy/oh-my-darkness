@@ -4,7 +4,7 @@ import { Box, Heading, Stack, Text } from '@chakra-ui/react';
 const Introduction = () => {
 	return (
 		<Stack direction={['column', 'row']}>
-			<Stack maxW={['full', '50%']} p={5}>
+			<Stack maxW={['full', '50%']} p={5} justify='center'>
 				<Heading>Title</Heading>
 				<Text>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

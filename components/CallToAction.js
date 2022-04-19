@@ -18,11 +18,14 @@ const CallToAction = () => {
 				<Heading color='white'>Join us on Discord!</Heading>
 				<Button>Discord</Button>
 			</VStack>
-			<Image
-				src='/images/web/Final-Fantasy-XIV-Endwalker.jpg'
-				width={2000}
-				height={1270}
-			/>
+			<Box w='full' h='auto'>
+				<Image
+					src='/images/web/eUf4rnzTruLPGk2tEyfoSQ.jpg'
+					width={1920}
+					height={1080}
+					layout='responsive'
+				/>
+			</Box>
 			<Box
 				pos='absolute'
 				top={0}
