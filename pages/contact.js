@@ -8,8 +8,12 @@ import {
 	Heading,
 	Text,
 	Textarea,
+	Button,
+	VStack,
 } from '@chakra-ui/react';
 import Banner from '../components/Banner';
+import Footer from '../components/Footer';
+import ContactForm from '../components/forms/ContactForm';
 
 const ContactPage = () => {
 	return (
@@ -20,9 +24,13 @@ const ContactPage = () => {
 				height={675}
 				title='Contact Us'
 			/>
-			<Flex>
-				<Flex as='form'></Flex>
+			<Flex justify='center' align='center' flexDirection='column' p={[0, 12]}>
+				<ContactForm />
+				<Text fontStyle='italic' mb='1rem'>
+					An officer will attempt to reach you in game.
+				</Text>
 			</Flex>
+			<Footer />
 		</Flex>
 	);
 };
