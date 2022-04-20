@@ -1,6 +1,6 @@
-import { Divider, Flex, IconButton, Stack, Text } from '@chakra-ui/react';
-import { FaLinkedin, FaTwitter } from 'react-icons/fa';
-import { HiOutlineMail } from 'react-icons/hi';
+import { Divider, Flex, IconButton, Link, Stack, Text } from '@chakra-ui/react';
+
+import contactList from '../lib/socialList';
 
 const Footer = () => {
 	return (
@@ -17,6 +17,7 @@ const Footer = () => {
 			<Stack direction='row' spacing={10}>
 				<Stack>
 					<Text fontWeight='bold'>Social</Text>
+					{/* <Link href={process.env.DISCORD_INVITE_LINK}>Discord</Link> */}
 					<Text>Discord</Text>
 				</Stack>
 				<Stack>
@@ -29,14 +30,26 @@ const Footer = () => {
 			<Divider m='auto' maxW='50%' />
 			<Flex flexDirection={['column', 'row']} gap={10}>
 				<Flex flexDirection='column'>
-					<Text>This site was developed by INSERT LINK</Text>
+					<Text>
+						This site was developed by{' '}
+						<Link href='https://www.mattlittrell.dev' target='_blank'>
+							Matthew Littrell
+						</Link>
+					</Text>
 					<Text>For business inquiries, please use the following methods</Text>
 				</Flex>
 				<Divider orientation='vertical' />
 				<Stack direction={['coloumn', 'row']} spacing={4} align='center'>
-					<IconButton icon={<FaTwitter />} variant='ghost' />
-					<IconButton icon={<FaLinkedin />} variant='ghost' />
-					<IconButton icon={<HiOutlineMail />} variant='ghost' />
+					{contactList.map((social) => (
+						<Link key={social.label} href={social.href} target='_blank'>
+							<IconButton
+								aria-label={social.label}
+								icon={social.icon}
+								variant='ghost'
+								_hover={{ bg: 'gray.200' }}
+							/>
+						</Link>
+					))}
 				</Stack>
 			</Flex>
 		</Flex>

@@ -13,12 +13,12 @@ import { BsFillSuitDiamondFill } from 'react-icons/bs';
 
 const Features = () => {
 	return (
-		<Flex>
-			<Box w='full' display={['none', 'block']}>
+		<Flex p={3} flexDirection={['column', 'row']}>
+			<Box w='full'>
 				<Image
-					src='/images/web/3913755-ffxivendwalker_t2.jpeg'
-					width={1200}
-					height={675}
+					src='/images/web/aaed09359bcca1262f923b1c3519eab4.jpg'
+					width={3648}
+					height={2280}
 					layout='responsive'
 				/>
 			</Box>

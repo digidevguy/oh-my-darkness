@@ -20,8 +20,12 @@ const Banner = ({ title, subtitle, src, width, height }) => {
 				gap={2}
 			>
 				<Heading>{title}</Heading>
-				<Divider />
-				<Text>{subtitle}</Text>
+				{subtitle && (
+					<>
+						<Divider />
+						<Text>{subtitle}</Text>
+					</>
+				)}
 			</Flex>
 			<Box w='full' pos='relative'>
 				<Box

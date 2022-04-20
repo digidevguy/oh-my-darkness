@@ -1,5 +1,8 @@
 import Link from 'next/link';
-import { Button, Flex } from '@chakra-ui/react';
+import Image from 'next/image';
+import { Box, Button, Flex, IconButton } from '@chakra-ui/react';
+
+import { navigation } from '../lib/navigation';
 
 const Layout = ({ children }) => {
 	return (
@@ -8,15 +11,32 @@ const Layout = ({ children }) => {
 				w='full'
 				gap={4}
 				boxShadow='md'
-				p={1}
+				p={2}
+				pl={3}
 				position='sticky'
 				top={0}
 				zIndex={3}
 				bg='white'
 			>
-				<Button variant='ghost'>One</Button>
-				<Button variant='ghost'>Two</Button>
-				<Button variant='ghost'>Three</Button>
+				<Link href='/' passHref>
+					<IconButton bg='none'>
+						<Box w='full'>
+							<Image
+								src='/images/transparent-final-fantasy-xiv-stormblood-final-fantasy-xiv-heavensward-final-fantasy-ii-meteor.webp'
+								width={920}
+								height={920}
+								layout='responsive'
+							/>
+						</Box>
+					</IconButton>
+				</Link>
+				{navigation.map((link) => (
+					<Link key={link.label} href={link.href} passHref>
+						<Button aria-label={link.label} variant='ghost'>
+							{link.label}
+						</Button>
+					</Link>
+				))}
 			</Flex>
 			<Flex>{children}</Flex>
 		</>
