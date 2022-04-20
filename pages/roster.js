@@ -1,5 +1,6 @@
 import { Flex } from '@chakra-ui/react';
 import Banner from '../components/Banner';
+import Footer from '../components/Footer';
 import MemberProfile from '../components/MemberProfile';
 import memberInfo from '../lib/memberInfo';
 
@@ -15,6 +16,7 @@ const RosterPage = () => {
 			<Flex flexDirection='column' maxW='1200px' m='auto'>
 				{memberInfo.map((member, i) => (
 					<MemberProfile
+						key={i}
 						name={member.name}
 						link={member.link}
 						nickname={member.nickname}
@@ -28,6 +30,7 @@ const RosterPage = () => {
 					/>
 				))}
 			</Flex>
+			<Footer />
 		</Flex>
 	);
 };
