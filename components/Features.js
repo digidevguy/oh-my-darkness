@@ -13,8 +13,8 @@ import { BsFillSuitDiamondFill } from 'react-icons/bs';
 
 const Features = () => {
 	return (
-		<Flex p={3} flexDirection={['column', 'row']}>
-			<Box w='full'>
+		<Flex p={3} flexDirection={['column', null, 'row']}>
+			<Box w='full' alignSelf='center'>
 				<Image
 					src='/images/web/aaed09359bcca1262f923b1c3519eab4.jpg'
 					width={3648}
