@@ -19,7 +19,7 @@ const MemberProfile = ({
 	src,
 	height,
 	width,
-	orientation,
+	orientation = 'row',
 }) => {
 	const flexDirection = ['column', orientation];
 
