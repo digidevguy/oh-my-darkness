@@ -38,8 +38,8 @@ const Footer = () => {
 					</Text>
 					<Text>For business inquiries, please use the following methods</Text>
 				</Flex>
-				<Divider orientation='vertical' />
-				<Stack direction={['coloumn', 'row']} spacing={4} align='center'>
+				<Divider display={['none', 'inherit']} orientation='vertical' />{' '}
+				<Stack direction='row' spacing={4} align='center' justify='center'>
 					{contactList.map((social) => (
 						<Link key={social.label} href={social.href} target='_blank'>
 							<IconButton
