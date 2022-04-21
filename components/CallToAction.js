@@ -1,7 +1,8 @@
-import { Box, Button, Flex, Heading, VStack } from '@chakra-ui/react';
+import { Box, Button, Flex, Heading, useToast, VStack } from '@chakra-ui/react';
 import Image from 'next/image';
 
 const CallToAction = () => {
+	const toast = useToast();
 	return (
 		<Flex flexDirection='column' pos='relative' p={[0, 20]}>
 			<VStack
@@ -18,13 +19,25 @@ const CallToAction = () => {
 				<Heading size='lg' color='white' textAlign='center'>
 					Join us on Discord!
 				</Heading>
-				<Button colorScheme='purple'>Discord</Button>
+				<Button
+					colorScheme='purple'
+					onClick={() =>
+						toast({
+							title: 'Warning',
+							description: 'This link has not been made yet',
+							status: 'warning',
+							isClosable: true,
+						})
+					}
+				>
+					Discord
+				</Button>
 			</VStack>
 			<Box w='full' pos='relative' rounded={[0, 10]} overflow='hidden'>
 				<Image
-					src='/images/web/Heavensward_Art_001.webp'
-					width={701}
-					height={480}
+					src='/images/web/airship.jpg'
+					width={2400}
+					height={1406}
 					layout='responsive'
 				/>
 				<Box

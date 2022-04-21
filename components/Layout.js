@@ -49,7 +49,7 @@ const Layout = ({ children }) => {
 					</Link>
 				))}
 			</Flex>
-			<Flex>{children}</Flex>
+			<Flex flexDirection='column'>{children}</Flex>
 		</>
 	);
 };
