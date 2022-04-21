@@ -4,6 +4,7 @@ import {
 	Heading,
 	Input,
 	Textarea,
+	useColorModeValue,
 	useToast,
 	VStack,
 } from '@chakra-ui/react';
@@ -25,7 +26,7 @@ const ContactForm = () => {
 			as='form'
 			// m='auto'
 			// mt='3rem'
-			bg='gray.500'
+			bg={useColorModeValue('gray.500', 'gray.700')}
 			flexDirection='column'
 			p={12}
 			rounded={[0, 6]}

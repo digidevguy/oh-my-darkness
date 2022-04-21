@@ -8,6 +8,7 @@ import {
 	ListItem,
 	Stack,
 	Text,
+	useColorModeValue,
 } from '@chakra-ui/react';
 import { BsFillSuitDiamondFill } from 'react-icons/bs';
 
@@ -22,7 +23,12 @@ const Features = () => {
 					layout='responsive'
 				/>
 			</Box>
-			<Stack bg='gray.200' p={5} boxShadow='md' justifyContent='center'>
+			<Stack
+				bg={useColorModeValue('gray.200', 'gray.700')}
+				p={5}
+				boxShadow='md'
+				justifyContent='center'
+			>
 				<Heading>List Title</Heading>
 				<Text>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
