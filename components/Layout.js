@@ -14,6 +14,7 @@ import { HamburgerIcon } from '@chakra-ui/icons';
 
 import { navigation } from '../lib/navigation';
 import Drawer from './Drawer';
+import DarkModeSwitch from './DarkModeSwitch';
 
 const Layout = ({ children }) => {
 	const { isOpen, onOpen, onClose } = useDisclosure();
@@ -66,6 +67,7 @@ const Layout = ({ children }) => {
 						</Link>
 					))}
 				</ButtonGroup>
+				<DarkModeSwitch />
 			</Flex>
 			<Flex flexDirection='column'>{children}</Flex>
 		</>

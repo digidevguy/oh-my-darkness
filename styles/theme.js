@@ -8,4 +8,11 @@ const fonts = {
 	body: 'Questrial, sans-serif',
 };
 
-export const theme = extendTheme({ fonts });
+const config = {
+	initialColorMode: 'light',
+	useSystemColorMode: true,
+};
+
+const theme = extendTheme({ fonts, config });
+
+export default theme;
