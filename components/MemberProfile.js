@@ -1,13 +1,5 @@
 import Image from 'next/image';
-import {
-	Box,
-	Divider,
-	Flex,
-	Heading,
-	Link,
-	Text,
-	VStack,
-} from '@chakra-ui/react';
+import { Box, Button, Divider, Flex, Heading, Text } from '@chakra-ui/react';
 
 const MemberProfile = ({
 	name,
@@ -25,14 +17,20 @@ const MemberProfile = ({
 	const flexDirection = ['column', orientation];
 
 	return (
-		<Flex flexDirection={flexDirection} p={5} align='center'>
+		<Flex
+			flexDirection={flexDirection}
+			p={5}
+			align='center'
+			gap='1rem'
+			border='1px'
+			borderColor='gray.200'
+			boxShadow='md'
+		>
 			<Box w={['full', '50%']} rounded={10} overflow='hidden'>
 				<Image src={src} width={width} height={height} layout='responsive' />
 			</Box>
 			<Flex w={['full', '50%']} p={5} flexDirection='column' gap='1rem'>
-				<Link href={link} target='_blank'>
-					<Heading>{name}</Heading>
-				</Link>
+				<Heading>{name}</Heading>
 				<Flex gap='1rem'>
 					<Text fontWeight='bold'>Nickname:</Text>
 					<Text fontStyle='italic'>{nickname}</Text>
@@ -54,6 +52,9 @@ const MemberProfile = ({
 					<Text fontWeight='bold'>Interests</Text>
 					<Text>{interests}</Text>
 				</Flex>
+				<Button as='a' href={link} target='_blank' colorScheme='teal'>
+					Lodestone
+				</Button>
 			</Flex>
 		</Flex>
 	);

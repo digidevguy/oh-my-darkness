@@ -14,7 +14,7 @@ const RosterPage = () => {
 				title='Meet the Assholes'
 				subtitle='No...seriously...'
 			/>
-			<Flex flexDirection='column' maxW='1200px' m='auto'>
+			<Flex flexDirection='column' maxW='1200px' m='auto' gap='1rem' p={5}>
 				{memberInfo.map((member, i) => (
 					<MemberProfile
 						key={i}
@@ -28,7 +28,8 @@ const RosterPage = () => {
 						src={member.src}
 						width={member.width}
 						height={member.height}
-						orientation={member.orientation}
+						// orientation={member.orientation}
+						orientation={i % 2 === 0 ? 'row' : 'row-reverse'}
 					/>
 				))}
 			</Flex>
