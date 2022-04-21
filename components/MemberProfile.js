@@ -16,6 +16,7 @@ const MemberProfile = ({
 	jobs,
 	reasonToPlay,
 	interests,
+	rank,
 	src,
 	height,
 	width,
@@ -35,6 +36,10 @@ const MemberProfile = ({
 				<Flex gap='1rem'>
 					<Text fontWeight='bold'>Nickname:</Text>
 					<Text fontStyle='italic'>{nickname}</Text>
+				</Flex>
+				<Flex gap='1rem'>
+					<Text fontWeight='bold'>Rank:</Text>
+					<Text fontStyle='italic'>{rank}</Text>
 				</Flex>
 				<Divider maxW='60%' />
 				<Flex gap='1rem'>

@@ -19,6 +19,7 @@ const RosterPage = () => {
 					<MemberProfile
 						key={i}
 						name={member.name}
+						rank={member.rank}
 						link={member.link}
 						nickname={member.nickname}
 						jobs={member.jobs}
