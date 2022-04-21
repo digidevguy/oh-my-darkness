@@ -68,8 +68,14 @@ const Footer = () => {
 				<Divider display={['none', 'inherit']} orientation='vertical' />{' '}
 				<Stack direction='row' spacing={4} align='center' justify='center'>
 					{contactList.map((social) => (
-						<Link key={social.label} href={social.href} target='_blank'>
+						<Link
+							key={social.label}
+							href={social.href}
+							target='_blank'
+							passHref
+						>
 							<IconButton
+								as='a'
 								aria-label={social.label}
 								icon={social.icon}
 								variant='ghost'

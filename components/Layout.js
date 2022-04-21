@@ -45,7 +45,7 @@ const Layout = ({ children }) => {
 					/>
 					<Drawer isOpen={isOpen} onClose={onClose} focusRef={menuRef} />
 					<Link href='/' passHref>
-						<IconButton bg='none'>
+						<IconButton as='a' bg='none'>
 							<Box w='full'>
 								<Image
 									src='/images/transparent-final-fantasy-xiv-stormblood-final-fantasy-xiv-heavensward-final-fantasy-ii-meteor.webp'
