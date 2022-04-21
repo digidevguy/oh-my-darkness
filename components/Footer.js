@@ -1,6 +1,15 @@
-import { Divider, Flex, IconButton, Link, Stack, Text } from '@chakra-ui/react';
+import Link from 'next/link';
+import {
+	Divider,
+	Flex,
+	IconButton,
+	Link as ChakraLink,
+	Stack,
+	Text,
+} from '@chakra-ui/react';
 
 import contactList from '../lib/socialList';
+import { navigation } from '../lib/navigation';
 
 const Footer = () => {
 	return (
@@ -22,9 +31,11 @@ const Footer = () => {
 				</Stack>
 				<Stack>
 					<Text fontWeight='bold'>Navigation</Text>
-					<Text>One</Text>
-					<Text>Two</Text>
-					<Text>Three</Text>
+					{navigation.map((link, i) => (
+						<Link key={i} href={link.href} passHref>
+							<ChakraLink aria-label={link.label}>{link.label}</ChakraLink>
+						</Link>
+					))}
 				</Stack>
 			</Stack>
 			<Divider m='auto' maxW='50%' />

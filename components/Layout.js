@@ -1,6 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Box, Button, Flex, IconButton } from '@chakra-ui/react';
+import {
+	Box,
+	Button,
+	Flex,
+	IconButton,
+	Link as ChakraLink,
+} from '@chakra-ui/react';
 
 import { navigation } from '../lib/navigation';
 
@@ -32,7 +38,12 @@ const Layout = ({ children }) => {
 				</Link>
 				{navigation.map((link) => (
 					<Link key={link.label} href={link.href} passHref>
-						<Button aria-label={link.label} variant='ghost'>
+						<Button
+							as={ChakraLink}
+							aria-label={link.label}
+							variant='ghost'
+							// _hover={{ textDecoration: 'none' }}
+						>
 							{link.label}
 						</Button>
 					</Link>
