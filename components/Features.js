@@ -14,7 +14,7 @@ import { BsFillSuitDiamondFill } from 'react-icons/bs';
 
 const Features = () => {
 	return (
-		<Flex p={3} flexDirection={['column', null, 'row']}>
+		<Flex m={3} flexDirection={['column', null, 'row']} boxShadow='md'>
 			<Box w='full' alignSelf='center'>
 				<Image
 					src='/images/web/aaed09359bcca1262f923b1c3519eab4.jpg'
