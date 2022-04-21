@@ -38,7 +38,13 @@ const Banner = ({ title, subtitle, src, width, height }) => {
 					opacity={0.4}
 					zIndex={1}
 				></Box>
-				<Image src={src} width={width} height={height} layout='responsive' />
+				<Image
+					src={src}
+					width={width}
+					height={height}
+					layout='responsive'
+					priority
+				/>
 			</Box>
 		</Flex>
 	);
