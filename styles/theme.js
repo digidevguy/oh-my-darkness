@@ -10,7 +10,7 @@ const fonts = {
 
 const config = {
 	initialColorMode: 'light',
-	useSystemColorMode: false,
+	useSystemColorMode: true,
 };
 
 const theme = extendTheme({ fonts, config });
