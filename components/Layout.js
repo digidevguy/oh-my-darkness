@@ -1,16 +1,24 @@
+import { useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import {
 	Box,
 	Button,
+	ButtonGroup,
 	Flex,
 	IconButton,
 	Link as ChakraLink,
+	useDisclosure,
 } from '@chakra-ui/react';
+import { HamburgerIcon } from '@chakra-ui/icons';
 
 import { navigation } from '../lib/navigation';
+import Drawer from './Drawer';
 
 const Layout = ({ children }) => {
+	const { isOpen, onOpen, onClose } = useDisclosure();
+	const menuRef = useRef();
+
 	return (
 		<>
 			<Flex
@@ -24,6 +32,14 @@ const Layout = ({ children }) => {
 				zIndex={3}
 				bg='white'
 			>
+				<IconButton
+					ref={menuRef}
+					icon={<HamburgerIcon />}
+					bg='none'
+					onClick={onOpen}
+					display={['inherit', 'none']}
+				/>
+				<Drawer isOpen={isOpen} onClose={onClose} focusRef={menuRef} />
 				<Link href='/' passHref>
 					<IconButton bg='none'>
 						<Box w='full'>
@@ -36,18 +52,20 @@ const Layout = ({ children }) => {
 						</Box>
 					</IconButton>
 				</Link>
-				{navigation.map((link) => (
-					<Link key={link.label} href={link.href} passHref>
-						<Button
-							as={ChakraLink}
-							aria-label={link.label}
-							variant='ghost'
-							// _hover={{ textDecoration: 'none' }}
-						>
-							{link.label}
-						</Button>
-					</Link>
-				))}
+				<ButtonGroup display={['none', 'inherit']}>
+					{navigation.map((link) => (
+						<Link key={link.label} href={link.href} passHref>
+							<Button
+								as={ChakraLink}
+								aria-label={link.label}
+								variant='ghost'
+								// _hover={{ textDecoration: 'none' }}
+							>
+								{link.label}
+							</Button>
+						</Link>
+					))}
+				</ButtonGroup>
 			</Flex>
 			<Flex flexDirection='column'>{children}</Flex>
 		</>
