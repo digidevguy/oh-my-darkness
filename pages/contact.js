@@ -23,6 +23,7 @@ const ContactPage = () => {
 				width={1200}
 				height={675}
 				title='Contact Us'
+				subtitle='For reasons?'
 			/>
 			<Flex justify='center' align='center' flexDirection='column' p={[0, 12]}>
 				<ContactForm />

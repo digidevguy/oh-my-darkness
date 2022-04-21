@@ -12,6 +12,7 @@ const RosterPage = () => {
 				width={2000}
 				height={1270}
 				title='Meet the Assholes'
+				subtitle='No...seriously...'
 			/>
 			<Flex flexDirection='column' maxW='1200px' m='auto'>
 				{memberInfo.map((member, i) => (

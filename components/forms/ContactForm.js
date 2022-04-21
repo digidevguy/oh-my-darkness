@@ -35,7 +35,9 @@ const ContactForm = () => {
 			mb={3}
 			onSubmit={handleSubmit}
 		>
-			<Heading mb={6}>Let us know what you need!</Heading>
+			<Heading mb={6} size='lg' textAlign='center'>
+				Let us know what you need!
+			</Heading>
 			<FormControl>
 				<Input placeholder="Y'shtola Rhul" variant='filled' mb={3} />
 			</FormControl>

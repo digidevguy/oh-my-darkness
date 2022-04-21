@@ -10,7 +10,7 @@ export default function Home() {
 		<Flex flexDirection='column'>
 			<Banner
 				title='Oh My Darkness'
-				subtitle='Subtitle'
+				subtitle='Because why not?'
 				src='/images/web/x1a6AVmvF6HfxbHBN7YzjtbQDkOgFXw3rLziPwX9PIw.webp'
 				width={3764}
 				height={2352}

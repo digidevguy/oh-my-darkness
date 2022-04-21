@@ -3,27 +3,23 @@ import { Box, Divider, Flex, Heading, Text, VStack } from '@chakra-ui/react';
 
 const Banner = ({ title, subtitle, src, width, height }) => {
 	return (
-		<Flex
-			pos='relative'
-			w='full'
-			maxH='100vh'
-			overflow='hidden'
-			flexDirection='column'
-		>
+		<Flex pos='relative' w='full' maxH='100vh' flexDirection='column'>
 			<Flex
 				pos='absolute'
 				left={['10%', '25%']}
-				top={['55%', '60%']}
+				top={['45%', '60%']}
 				zIndex={2}
 				flexDirection='column'
 				color='white'
 				gap={2}
 			>
-				<Heading>{title}</Heading>
+				<Heading as='h1' size='2xl'>
+					{title}
+				</Heading>
 				{subtitle && (
 					<>
 						<Divider />
-						<Text>{subtitle}</Text>
+						<Text fontStyle='italic'>{subtitle}</Text>
 					</>
 				)}
 			</Flex>

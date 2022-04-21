@@ -1,9 +1,7 @@
 import {
 	Flex,
 	Heading,
-	List,
 	ListItem,
-	ListIcon,
 	OrderedList,
 	Text,
 	UnorderedList,
@@ -19,7 +17,7 @@ const AboutPage = () => {
 				src='/images/web/Final-Fantasy-XIV-1080-Main.jpg'
 				width={1920}
 				height={1080}
-				title='About Oh My Darkness'
+				title='About Us'
 				subtitle='Because reasons'
 			/>
 			<Flex flexDirection='column' gap='1rem' p={5}>
