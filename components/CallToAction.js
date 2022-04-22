@@ -1,8 +1,7 @@
-import { Box, Button, Flex, Heading, useToast, VStack } from '@chakra-ui/react';
+import { Box, Button, Flex, Heading, VStack } from '@chakra-ui/react';
 import Image from 'next/image';
 
 const CallToAction = () => {
-	const toast = useToast();
 	return (
 		<Flex flexDirection='column' pos='relative' p={[0, 20]}>
 			<VStack
@@ -20,15 +19,11 @@ const CallToAction = () => {
 					Join us on Discord!
 				</Heading>
 				<Button
+					as='a'
+					aria-label='Discord invite link'
+					href={process.env.DISCORD_INVITE_LINK}
+					target='_blank'
 					colorScheme='purple'
-					onClick={() =>
-						toast({
-							title: 'Warning',
-							description: 'This link has not been made yet',
-							status: 'warning',
-							isClosable: true,
-						})
-					}
 				>
 					Discord
 				</Button>

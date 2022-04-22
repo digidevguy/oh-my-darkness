@@ -1,20 +1,17 @@
 import Link from 'next/link';
 import {
-	Button,
 	Divider,
 	Flex,
 	IconButton,
 	Link as ChakraLink,
 	Stack,
 	Text,
-	useToast,
 } from '@chakra-ui/react';
 
 import contactList from '../lib/socialList';
 import { navigation } from '../lib/navigation';
 
 const Footer = () => {
-	const toast = useToast();
 	return (
 		<Flex
 			w='full'
@@ -29,21 +26,13 @@ const Footer = () => {
 			<Stack direction='row' spacing={10}>
 				<Stack>
 					<Text fontWeight='bold'>Social</Text>
-					{/* <Link href={process.env.DISCORD_INVITE_LINK}>Discord</Link> */}
-					<Button
-						color='whiteAlpha.700'
-						onClick={() =>
-							toast({
-								title: 'Warning',
-								description: 'This link has not been made yet',
-								status: 'warning',
-								isClosable: true,
-							})
-						}
-						variant='link'
+					<ChakraLink
+						aria-label='Discord invite link'
+						href={process.env.DISCORD_INVITE_LINK}
+						target='_blank'
 					>
 						Discord
-					</Button>
+					</ChakraLink>
 				</Stack>
 				<Stack>
 					<Text fontWeight='bold'>Navigation</Text>
@@ -59,7 +48,11 @@ const Footer = () => {
 				<Flex flexDirection='column'>
 					<Text>
 						This site was developed by{' '}
-						<Link href='https://www.mattlittrell.dev' target='_blank'>
+						<Link
+							aria-label='Web Developer website'
+							href='https://www.mattlittrell.dev'
+							target='_blank'
+						>
 							Matthew Littrell
 						</Link>
 					</Text>
