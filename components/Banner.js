@@ -3,7 +3,13 @@ import { Box, Divider, Flex, Heading, Text, VStack } from '@chakra-ui/react';
 
 const Banner = ({ title, subtitle, src, width, height }) => {
 	return (
-		<Flex pos='relative' w='full' maxH='100vh' flexDirection='column'>
+		<Flex
+			pos='relative'
+			w='full'
+			maxH='100vh'
+			flexDirection='column'
+			overflow='hidden'
+		>
 			<Flex
 				pos='absolute'
 				left={['10%', '25%']}
