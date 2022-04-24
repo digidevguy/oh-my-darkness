@@ -14,12 +14,24 @@ import { BsFillSuitDiamondFill } from 'react-icons/bs';
 
 const Features = () => {
 	return (
-		<Flex m={3} flexDirection={['column', null, 'row']} boxShadow='md'>
+		<Flex
+			m={3}
+			flexDirection={['column', null, 'row']}
+			boxShadow='md'
+			rounded={10}
+			overflow='hidden'
+		>
 			<Box w='full' alignSelf='center'>
-				<Image
+				{/* <Image
 					src='/images/web/aaed09359bcca1262f923b1c3519eab4.jpg'
 					width={3648}
 					height={2280}
+					layout='responsive'
+				/> */}
+				<Image
+					src='/images/raid-group-photo.png'
+					width={1920}
+					height={1080}
 					layout='responsive'
 				/>
 			</Box>
