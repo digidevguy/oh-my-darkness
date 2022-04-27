@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { Box, Heading, Stack, Text } from '@chakra-ui/react';
 
 const Introduction = () => {

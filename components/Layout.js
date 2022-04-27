@@ -61,12 +61,7 @@ const Layout = ({ children }) => {
 					<ButtonGroup display={['none', 'inherit']}>
 						{navigation.map((link) => (
 							<Link key={link.label} href={link.href} passHref>
-								<Button
-									as={ChakraLink}
-									aria-label={link.label}
-									variant='ghost'
-									// _hover={{ textDecoration: 'none' }}
-								>
+								<Button as={ChakraLink} aria-label={link.label} variant='ghost'>
 									{link.label}
 								</Button>
 							</Link>

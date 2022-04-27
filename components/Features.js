@@ -15,7 +15,7 @@ import { BsFillSuitDiamondFill } from 'react-icons/bs';
 const Features = () => {
 	return (
 		<Flex
-			m={3}
+			m={5}
 			flexDirection={['column', null, 'row']}
 			boxShadow='md'
 			rounded={10}
@@ -40,6 +40,7 @@ const Features = () => {
 				p={5}
 				boxShadow='md'
 				justifyContent='center'
+				maxW={['full', '50%']}
 			>
 				<Heading>List Title</Heading>
 				<Text>

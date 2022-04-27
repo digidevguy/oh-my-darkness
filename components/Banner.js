@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Box, Divider, Flex, Heading, Text, VStack } from '@chakra-ui/react';
+import { Box, Divider, Flex, Heading, Text } from '@chakra-ui/react';
 
 const Banner = ({ title, subtitle, src, width, height }) => {
 	return (
