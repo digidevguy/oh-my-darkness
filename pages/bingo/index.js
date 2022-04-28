@@ -4,14 +4,15 @@ import {
 	Checkbox,
 	Flex,
 	Input,
+	Link as ChakraLink,
 	SimpleGrid,
+	Text,
 	useToast,
 } from '@chakra-ui/react';
+import Image from 'next/image';
 
-const bingoList = Array.from(Array(25), (x, index) => ({
-	label: index + 1,
-	isClicked: false,
-}));
+import bingoOptions from '../../lib/bingoOptions';
+import Link from 'next/link';
 
 const BingoPage = () => {
 	const [cardValues, setCardValues] = useState([]);
@@ -36,7 +37,7 @@ const BingoPage = () => {
 	};
 
 	useEffect(() => {
-		setCardValues(shuffleValues(bingoList));
+		setCardValues(shuffleValues(bingoOptions));
 	}, []);
 
 	useEffect(() => console.log(isBingo), [isBingo]);
@@ -68,8 +69,29 @@ const BingoPage = () => {
 	};
 
 	return (
-		<Flex justify='center' align='center' flexDirection='column' gap='2rem'>
-			<Flex as='form' flexDirection='column' gap='1rem' onSubmit={handleSubmit}>
+		<Flex
+			justify='center'
+			align='center'
+			flexDirection='column'
+			gap='2rem'
+			minH='100vh'
+		>
+			<Flex
+				as='form'
+				flexDirection='column'
+				gap='1rem'
+				onSubmit={handleSubmit}
+				bg='gray.500'
+				p={4}
+				boxShadow='sm'
+				rounded={5}
+			>
+				<Image
+					src='/images/OMD_Raid_bingo_-_title.png'
+					width={779}
+					height={186}
+					layout='responsive'
+				/>
 				<SimpleGrid templateColumns='repeat(5,1fr)'>
 					{cardValues &&
 						cardValues.map((item, i) => (
@@ -79,13 +101,15 @@ const BingoPage = () => {
 								alignItems='center'
 								justifyContent='center'
 								p={4}
-								_hover={{ backgroundColor: 'gray.200' }}
+								transition='ease-in 0.25s'
+								_hover={{ backgroundColor: 'green.200' }}
 								backgroundColor={item.isClicked ? 'blue.200' : 'green.300'}
 								textDecoration={item.isClicked ? 'line-through' : 'none'}
 								data-id={i}
 								onClick={handleToggle}
+								textAlign='center'
 							>
-								{item.label}
+								<Text maxW='7rem'>{item.label}</Text>
 							</Flex>
 						))}
 				</SimpleGrid>
@@ -96,13 +120,24 @@ const BingoPage = () => {
 						name='playerName'
 						value={playerName}
 						onChange={handlePlayerNameChange}
+						maxW={['full', '50%']}
+						m='auto'
+						variant='filled'
 					/>
-					<Checkbox onChange={() => setIsBingo(!isBingo)}>Bingo?</Checkbox>
-					<Button type='submit' colorScheme='blue'>
+					<Checkbox alignSelf='center' onChange={() => setIsBingo(!isBingo)}>
+						Bingo?
+					</Checkbox>
+					<Button w={['full', '50%']} m='auto' type='submit' colorScheme='blue'>
 						Submit
 					</Button>
 				</Flex>
 			</Flex>
+			<Text>
+				Want to see where you stand? Go to the{' '}
+				<Link href='/bingo/history' passHref>
+					<ChakraLink color='blue.300'>Game History Page</ChakraLink>
+				</Link>
+			</Text>
 		</Flex>
 	);
 };
