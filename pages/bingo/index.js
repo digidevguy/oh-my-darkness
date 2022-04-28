@@ -42,6 +42,15 @@ const BingoPage = () => {
 		return arr;
 	};
 
+	const reset = (e) => {
+		const tempArr = cardValues.map((card) =>
+			card.isClicked === true
+				? { id: card.id, label: card.label, isClicked: false }
+				: card
+		);
+		setCardValues(tempArr);
+	};
+
 	useEffect(() => {
 		setCardValues(shuffleValues(bingoOptions));
 	}, []);
@@ -67,6 +76,7 @@ const BingoPage = () => {
 		});
 		const { message } = await res.json();
 		if (res.ok) {
+			reset();
 			return toast({ title: message, status: 'success', isClosable: true });
 		}
 		toast({ title: message, status: 'error', isClosable: true });

@@ -2,10 +2,7 @@ import {
 	Modal as ChakraModal,
 	ModalOverlay,
 	ModalContent,
-	ModalHeader,
 	ModalFooter,
-	ModalBody,
-	ModalCloseButton,
 	Flex,
 	SimpleGrid,
 	Button,
@@ -13,7 +10,7 @@ import {
 
 const Modal = ({ isOpen, onClose, cardValues }) => {
 	return (
-		<ChakraModal isOpen={isOpen} onClose={onClose} isCentered>
+		<ChakraModal isOpen={isOpen} onClose={onClose} isCentered size='lg'>
 			<ModalOverlay />
 			<ModalContent>
 				<Flex flexDirection='column' gap='1rem' p={2}>
@@ -22,6 +19,7 @@ const Modal = ({ isOpen, onClose, cardValues }) => {
 							cardValues.map((item, i) => (
 								<Flex
 									maxW='7rem'
+									h='7rem'
 									key={i}
 									border='1px solid'
 									alignItems='center'
