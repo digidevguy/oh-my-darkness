@@ -39,7 +39,7 @@ const BingoHistoryPage = () => {
 			const { message, history } = await res.json();
 
 			if (!res.ok)
-				toast({
+				return toast({
 					title: 'Error',
 					description: message,
 					status: error,
