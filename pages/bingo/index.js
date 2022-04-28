@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import {
 	Button,
 	Checkbox,
@@ -12,7 +13,7 @@ import {
 import Image from 'next/image';
 
 import bingoOptions from '../../lib/bingoOptions';
-import Link from 'next/link';
+import Footer from '../../components/Footer';
 
 const BingoPage = () => {
 	const [cardValues, setCardValues] = useState([]);
@@ -33,14 +34,17 @@ const BingoPage = () => {
 				arr[currentIndex],
 			];
 		}
+
+		let fromIndex = arr.map((e) => e.id).indexOf(13);
+		const freeSpot = arr.splice(fromIndex, 1)[0];
+		arr.splice(12, 0, freeSpot);
+
 		return arr;
 	};
 
 	useEffect(() => {
 		setCardValues(shuffleValues(bingoOptions));
 	}, []);
-
-	useEffect(() => console.log(isBingo), [isBingo]);
 
 	const handleToggle = (e) => {
 		const id = e.target.dataset.id;
@@ -69,76 +73,87 @@ const BingoPage = () => {
 	};
 
 	return (
-		<Flex
-			justify='center'
-			align='center'
-			flexDirection='column'
-			gap='2rem'
-			minH='100vh'
-		>
+		<>
 			<Flex
-				as='form'
+				justify='center'
+				align='center'
 				flexDirection='column'
-				gap='1rem'
-				onSubmit={handleSubmit}
-				bg='gray.500'
-				p={4}
-				boxShadow='sm'
-				rounded={5}
+				gap='2rem'
+				minH='100vh'
 			>
-				<Image
-					src='/images/OMD_Raid_bingo_-_title.png'
-					width={779}
-					height={186}
-					layout='responsive'
-				/>
-				<SimpleGrid templateColumns='repeat(5,1fr)'>
-					{cardValues &&
-						cardValues.map((item, i) => (
-							<Flex
-								key={i}
-								border='1px solid'
-								alignItems='center'
-								justifyContent='center'
-								p={4}
-								transition='ease-in 0.25s'
-								_hover={{ backgroundColor: 'green.200' }}
-								backgroundColor={item.isClicked ? 'blue.200' : 'green.300'}
-								textDecoration={item.isClicked ? 'line-through' : 'none'}
-								data-id={i}
-								onClick={handleToggle}
-								textAlign='center'
-							>
-								<Text maxW='7rem'>{item.label}</Text>
-							</Flex>
-						))}
-				</SimpleGrid>
-
-				<Flex flexDirection='column' gap='1rem'>
-					<Input
-						placeholder='Ryohou Kamina'
-						name='playerName'
-						value={playerName}
-						onChange={handlePlayerNameChange}
-						maxW={['full', '50%']}
-						m='auto'
-						variant='filled'
+				<Flex
+					as='form'
+					flexDirection='column'
+					gap='1rem'
+					onSubmit={handleSubmit}
+					bg='gray.500'
+					p={4}
+					boxShadow='sm'
+					rounded={5}
+				>
+					<Image
+						src='/images/OMD_Raid_bingo_-_title.png'
+						width={779}
+						height={186}
+						layout='responsive'
+						pri
 					/>
-					<Checkbox alignSelf='center' onChange={() => setIsBingo(!isBingo)}>
-						Bingo?
-					</Checkbox>
-					<Button w={['full', '50%']} m='auto' type='submit' colorScheme='blue'>
-						Submit
-					</Button>
+					<SimpleGrid templateColumns='repeat(5,1fr)'>
+						{cardValues &&
+							cardValues.map((item, i) => (
+								<Flex
+									maxW='7rem'
+									h='7rem'
+									key={i}
+									border='1px solid'
+									alignItems='center'
+									justifyContent='center'
+									p={2}
+									transition='ease-in 0.25s'
+									_hover={{ backgroundColor: 'green.200' }}
+									backgroundColor={item.isClicked ? 'blue.400' : 'blue.200'}
+									textDecoration={item.isClicked ? 'line-through' : 'none'}
+									data-id={i}
+									onClick={handleToggle}
+									textAlign='center'
+								>
+									{item.label}
+								</Flex>
+							))}
+					</SimpleGrid>
+
+					<Flex flexDirection='column' gap='1rem'>
+						<Input
+							placeholder='Ryohou Kamina'
+							name='playerName'
+							value={playerName}
+							onChange={handlePlayerNameChange}
+							maxW={['full', '50%']}
+							m='auto'
+							variant='filled'
+						/>
+						<Checkbox alignSelf='center' onChange={() => setIsBingo(!isBingo)}>
+							Bingo?
+						</Checkbox>
+						<Button
+							w={['full', '50%']}
+							m='auto'
+							type='submit'
+							colorScheme='blue'
+						>
+							Submit
+						</Button>
+					</Flex>
 				</Flex>
+				<Text>
+					Want to see where you stand? Go to the{' '}
+					<Link href='/bingo/history' passHref>
+						<ChakraLink color='blue.300'>Game History Page</ChakraLink>
+					</Link>
+				</Text>
 			</Flex>
-			<Text>
-				Want to see where you stand? Go to the{' '}
-				<Link href='/bingo/history' passHref>
-					<ChakraLink color='blue.300'>Game History Page</ChakraLink>
-				</Link>
-			</Text>
-		</Flex>
+			<Footer />
+		</>
 	);
 };
 
