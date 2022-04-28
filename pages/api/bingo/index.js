@@ -3,11 +3,11 @@ import Game from '../../../models/Game';
 
 const handler = async (req, res) => {
 	if (req.method === 'GET') {
-		const history = await Game.find({});
+		const history = await Game.find();
 
 		if (!history) {
 			return res.json({
-				message: 'unable to find game history, please try again later',
+				message: 'Unable to find game history, please try again later',
 			});
 		}
 
