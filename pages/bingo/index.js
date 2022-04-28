@@ -96,7 +96,7 @@ const BingoPage = () => {
 						width={779}
 						height={186}
 						layout='responsive'
-						pri
+						priority
 					/>
 					<SimpleGrid templateColumns='repeat(5,1fr)'>
 						{cardValues &&
