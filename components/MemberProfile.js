@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { Box, Button, Divider, Flex, Heading, Text } from '@chakra-ui/react';
+import { FaTwitch } from 'react-icons/fa';
 
 const MemberProfile = ({
 	name,
@@ -12,6 +13,7 @@ const MemberProfile = ({
 	src,
 	height,
 	width,
+	stream,
 	orientation = 'row',
 }) => {
 	const flexDirection = ['column', orientation];
@@ -55,6 +57,18 @@ const MemberProfile = ({
 				<Button as='a' href={link} target='_blank' colorScheme='teal'>
 					Lodestone
 				</Button>
+				{stream && (
+					<Button
+						as='a'
+						leftIcon={<FaTwitch />}
+						bg='#a970ff'
+						href={stream}
+						target='_blank'
+						color='white'
+					>
+						Twitch
+					</Button>
+				)}
 			</Flex>
 		</Flex>
 	);

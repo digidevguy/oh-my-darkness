@@ -28,6 +28,7 @@ const RosterPage = () => {
 						src={member.src}
 						width={member.width}
 						height={member.height}
+						stream={member.stream}
 						// orientation={member.orientation}
 						orientation={i % 2 === 0 ? 'row' : 'row-reverse'}
 					/>
