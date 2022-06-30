@@ -11,8 +11,8 @@ const RosterPage = () => {
 				src='/images/web/Final-Fantasy-XIV-Endwalker.jpg'
 				width={2000}
 				height={1270}
-				title='Meet the Assholes'
-				subtitle='No...seriously...'
+				title='Meet the Raid Group'
+				// subtitle=''
 			/>
 			<Flex flexDirection='column' maxW='1200px' m='auto' gap='1rem' p={5}>
 				{memberInfo.map((member, i) => (
