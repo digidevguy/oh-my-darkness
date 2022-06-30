@@ -104,7 +104,6 @@ const AboutPage = () => {
 					considered at a premium: generally you can use what is there but
 					please be considerate of the other member's needs.
 				</Text>
-				<Text></Text>
 				<UnorderedList>
 					<ListItem>
 						For consummable usage, please ask an officer before withdrawing
