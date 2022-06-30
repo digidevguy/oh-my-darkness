@@ -42,27 +42,24 @@ const Features = () => {
 				justifyContent='center'
 				maxW={['full', '50%']}
 			>
-				<Heading>List Title</Heading>
+				<Heading textAlign='center'>Our Community</Heading>
 				<Text>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-					eiusmod tempor incididunt ut labore et dolore magna aliqua. Iaculis at
-					erat pellentesque adipiscing commodo elit at imperdiet.
+					Our community is everything, and we are always interested in creating
+					new memories with our people. We are always looking to:
 				</Text>
 				<List spacing={3}>
 					<ListItem>
 						<ListIcon as={BsFillSuitDiamondFill} />
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-						eiusmod tempor incididunt ut labore et dolore magna aliqua.
+						Finding like-minded players that enjoy group activities.
 					</ListItem>
 					<ListItem>
 						<ListIcon as={BsFillSuitDiamondFill} />
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-						eiusmod tempor incididunt ut labore et dolore magna aliqua.
+						Having an active dialogue on many topics ranging from planning our
+						next events to encouraging a member's recent artwork
 					</ListItem>
 					<ListItem>
 						<ListIcon as={BsFillSuitDiamondFill} />
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-						eiusmod tempor incididunt ut labore et dolore magna aliqua.
+						Collaborate with other members to create interesting activities
 					</ListItem>
 				</List>
 			</Stack>
