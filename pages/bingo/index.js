@@ -121,7 +121,7 @@ const BingoPage = () => {
 									p={2}
 									transition='ease-in 0.25s'
 									_hover={{ backgroundColor: 'green.200' }}
-									backgroundColor={item.isClicked ? 'blue.400' : 'blue.200'}
+									backgroundColor={item.isClicked ? 'blue.600' : 'blue.500'}
 									textDecoration={item.isClicked ? 'line-through' : 'none'}
 									data-id={i}
 									onClick={handleToggle}
