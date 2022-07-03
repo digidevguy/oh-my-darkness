@@ -24,20 +24,20 @@ export default function Home() {
 
 	return (
 		<Flex flexDirection='column'>
-			{/* <Banner
+			<Banner
 				title='Oh My Darkness'
 				subtitle='Because why not?'
 				src='/images/web/x1a6AVmvF6HfxbHBN7YzjtbQDkOgFXw3rLziPwX9PIw.webp'
 				width={3764}
 				height={2352}
-			/> */}
-			<Banner
+			/>
+			{/* <Banner
 				title='Oh My Darkness'
 				subtitle='Because why not?'
 				src='/images/members/unknown (4).png'
 				width={1920}
 				height={1080}
-			/>
+			/> */}
 			<Introduction />
 			<Features />
 			<CallToAction />

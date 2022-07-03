@@ -8,19 +8,56 @@ import {
 	useToast,
 	VStack,
 } from '@chakra-ui/react';
+import { useEffect, useState } from 'react';
+
+const initialState = {
+	character: '',
+	serverName: '',
+	activeTimes: '',
+	messages: '',
+};
 
 const ContactForm = () => {
+	const [formValues, setFormValues] = useState(initialState);
 	const toast = useToast();
+
+	const handleChange = (e) => {
+		const { name, value } = e.target;
+		setFormValues((prevValues) => ({ ...prevValues, [name]: value }));
+	};
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		toast({
-			title: 'Warning',
-			description: 'This form is still under construction',
-			status: 'warning',
-			isClosable: true,
-		});
+
+		try {
+			const response = await fetch(`api/messages`, {
+				method: 'POST',
+				body: JSON.stringify(formValues),
+				headers: {
+					'Content-Type': 'application/json',
+				},
+			});
+
+			const { message } = await response.json();
+
+			if (response.ok) {
+				toast({
+					title: 'Success',
+					description: message,
+					status: 'success',
+					isClosable: true,
+				});
+			} else {
+				toast({
+					title: 'Error',
+					description: message,
+					status: 'error',
+					isClosable: true,
+				});
+			}
+		} catch (err) {}
 	};
+
 	return (
 		<VStack
 			as='form'
@@ -39,10 +76,24 @@ const ContactForm = () => {
 				Let us know what you need!
 			</Heading>
 			<FormControl>
-				<Input placeholder="Y'shtola Rhul" variant='filled' mb={3} />
+				<Input
+					placeholder="Y'shtola Rhul"
+					variant='filled'
+					mb={3}
+					name='character'
+					value={formValues.character}
+					onChange={handleChange}
+				/>
 			</FormControl>
 			<FormControl>
-				<Input placeholder='Coeurl' variant='filled' mb={3} />
+				<Input
+					placeholder='Coeurl'
+					variant='filled'
+					mb={3}
+					name='serverName'
+					value={formValues.serverName}
+					onChange={handleChange}
+				/>
 			</FormControl>
 			<FormControl>
 				<Input
@@ -50,6 +101,9 @@ const ContactForm = () => {
 					variant='filled'
 					type='email'
 					mb={3}
+					name='activeTimes'
+					value={formValues.activeTimes}
+					onChange={handleChange}
 				/>
 			</FormControl>
 			<FormControl>
@@ -57,6 +111,9 @@ const ContactForm = () => {
 					placeholder='Your message (please less than 200 characters).'
 					variant='filled'
 					mb={6}
+					name='message'
+					value={formValues.message}
+					onChange={handleChange}
 				/>
 			</FormControl>
 			<Button colorScheme='teal' w='full' type='submit'>
