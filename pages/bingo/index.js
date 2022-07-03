@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Head from 'next/head';
 import {
 	Button,
 	Checkbox,
@@ -84,6 +85,11 @@ const BingoPage = () => {
 
 	return (
 		<>
+			<Head>
+				<title>Raid Bingo - Oh My Darkness</title>
+				<meta name='description' content="It's time to b-b-b-b-b-bingo!" />
+				<meta name='robots' content='noindex' />
+			</Head>
 			<Flex
 				justify='center'
 				align='center'
@@ -112,8 +118,8 @@ const BingoPage = () => {
 						{cardValues &&
 							cardValues.map((item, i) => (
 								<Flex
-									maxW='7rem'
-									h='7rem'
+									maxW={['4.5rem', '7rem']}
+									h={['6rem', '7rem']}
 									key={i}
 									border='1px solid'
 									alignItems='center'
@@ -123,11 +129,12 @@ const BingoPage = () => {
 									_hover={{ backgroundColor: 'green.200' }}
 									backgroundColor={item.isClicked ? 'blue.600' : 'blue.500'}
 									textDecoration={item.isClicked ? 'line-through' : 'none'}
-									data-id={i}
 									onClick={handleToggle}
 									textAlign='center'
 								>
-									{item.label}
+									<Text fontSize={['xs', 'md']} flexWrap='wrap' data-id={i}>
+										{item.label}
+									</Text>
 								</Flex>
 							))}
 					</SimpleGrid>

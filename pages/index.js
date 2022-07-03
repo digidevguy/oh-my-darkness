@@ -1,5 +1,6 @@
 import { Flex } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
+import Head from 'next/head';
 import Banner from '../components/Banner';
 import CallToAction from '../components/CallToAction';
 import Features from '../components/Features';
@@ -23,25 +24,34 @@ export default function Home() {
 	useEffect(() => console.log(status), [status]);
 
 	return (
-		<Flex flexDirection='column'>
-			<Banner
-				title='Oh My Darkness'
-				subtitle='Because why not?'
-				src='/images/web/x1a6AVmvF6HfxbHBN7YzjtbQDkOgFXw3rLziPwX9PIw.webp'
-				width={3764}
-				height={2352}
-			/>
-			{/* <Banner
+		<>
+			<Head>
+				<title>Welcome - Oh My Darkness</title>
+				<meta
+					name='description'
+					content='Welcome to Oh My Darkness, a growing community for Final Fantasy XIV'
+				/>
+			</Head>
+			<Flex flexDirection='column'>
+				<Banner
+					title='Oh My Darkness'
+					subtitle='Because why not?'
+					src='/images/web/x1a6AVmvF6HfxbHBN7YzjtbQDkOgFXw3rLziPwX9PIw.webp'
+					width={3764}
+					height={2352}
+				/>
+				{/* <Banner
 				title='Oh My Darkness'
 				subtitle='Because why not?'
 				src='/images/members/unknown (4).png'
 				width={1920}
 				height={1080}
 			/> */}
-			<Introduction />
-			<Features />
-			<CallToAction />
-			<Footer />
-		</Flex>
+				<Introduction />
+				<Features />
+				<CallToAction />
+				<Footer />
+			</Flex>
+		</>
 	);
 }

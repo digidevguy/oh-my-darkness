@@ -16,7 +16,7 @@ const AboutPage = () => {
 	return (
 		<>
 			<Head>
-				<title>About Oh My Darkness</title>
+				<title>About - Oh My Darkness</title>
 				<meta
 					name='description'
 					content='Our start and ongoing community story'

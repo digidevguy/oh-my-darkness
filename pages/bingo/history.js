@@ -13,6 +13,7 @@ import { useEffect, useState } from 'react';
 
 import Modal from '../../components/Modal';
 import Footer from '../../components/Footer';
+import Head from 'next/head';
 
 const BingoHistoryPage = () => {
 	const [gameHistory, setGameHistory] = useState([]);
@@ -72,6 +73,14 @@ const BingoHistoryPage = () => {
 
 	return (
 		<>
+			<Head>
+				<title>Bingo History - Oh My Darkness</title>
+				<meta
+					name='description'
+					content='View our bingo history and see who is on top'
+				/>
+				<meta name='robots' content='noindex' />
+			</Head>
 			<Flex
 				flexDirection='column'
 				gap='1.5rem'
