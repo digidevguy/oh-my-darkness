@@ -44,6 +44,7 @@ const ContactForm = () => {
 
 			if (response.ok) {
 				setLoading(false);
+				setFormValues(initialState);
 				toast({
 					title: 'Success',
 					description: message,
