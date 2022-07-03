@@ -33,10 +33,12 @@ const MemberProfile = ({
 			</Box>
 			<Flex w={['full', '50%']} p={5} flexDirection='column' gap='1rem'>
 				<Heading>{name}</Heading>
-				<Flex gap='1rem'>
-					<Text fontWeight='bold'>Nickname:</Text>
-					<Text fontStyle='italic'>{nickname}</Text>
-				</Flex>
+				{nickname && (
+					<Flex gap='1rem'>
+						<Text fontWeight='bold'>Nickname:</Text>
+						<Text fontStyle='italic'>{nickname}</Text>
+					</Flex>
+				)}
 				<Flex gap='1rem'>
 					<Text fontWeight='bold'>Rank:</Text>
 					<Text fontStyle='italic'>{rank}</Text>
@@ -46,14 +48,20 @@ const MemberProfile = ({
 					<Text fontWeight='bold'>Main Jobs:</Text>
 					<Text>{jobs}</Text>
 				</Flex>
-				<Flex gap='1rem' flexDirection='column'>
-					<Text fontWeight='bold'>When did you start playing XIV and why?</Text>
-					<Text>{reasonToPlay}</Text>
-				</Flex>
-				<Flex gap='1rem' flexDirection='column'>
-					<Text fontWeight='bold'>Interests</Text>
-					<Text>{interests}</Text>
-				</Flex>
+				{reasonToPlay && (
+					<Flex gap='1rem' flexDirection='column'>
+						<Text fontWeight='bold'>
+							When did you start playing XIV and why?
+						</Text>
+						<Text>{reasonToPlay}</Text>
+					</Flex>
+				)}
+				{interests && (
+					<Flex gap='1rem' flexDirection='column'>
+						<Text fontWeight='bold'>Interests</Text>
+						<Text>{interests}</Text>
+					</Flex>
+				)}
 				<Button as='a' href={link} target='_blank' colorScheme='teal'>
 					Lodestone
 				</Button>

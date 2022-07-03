@@ -3,24 +3,18 @@ import { Box, Heading, Stack, Text } from '@chakra-ui/react';
 const Introduction = () => {
 	return (
 		<Stack m='auto' maxW={['full', '50%']} p={5} justify='center'>
-			<Heading>Title</Heading>
+			<Heading>Welcome to Oh My Darkness</Heading>
 			<Text>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-				veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-				commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-				velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-				occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-				mollit anim id est laborum.
+				Our community is built on enjoying the many activities in FFXIV and
+				engaging in a welcoming and friendly environment. We believe in
+				accepting all members new and verterans alike that want to find a home
+				to create new friends and memories.
 			</Text>
 			<Text>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-				veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-				commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-				velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-				occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-				mollit anim id est laborum.
+				We have one static raid group focused on on-content progression, as well
+				as map and mount farm parties throughout each week. Additional
+				activities and raid groups are welcome as well. Please see our about
+				page or join our Discord server for more information.
 			</Text>
 		</Stack>
 	);

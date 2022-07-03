@@ -1,6 +1,8 @@
+import Head from 'next/head';
 import {
 	Flex,
 	Heading,
+	Link,
 	ListItem,
 	OrderedList,
 	Text,
@@ -13,199 +15,148 @@ import Footer from '../components/Footer';
 const AboutPage = () => {
 	return (
 		<>
+			<Head>
+				<title>About Oh My Darkness</title>
+				<meta
+					name='description'
+					content='Our start and ongoing community story'
+				/>
+			</Head>
 			<Banner
 				src='/images/web/Final-Fantasy-XIV-1080-Main.jpg'
 				width={1920}
 				height={1080}
 				title='About Us'
-				subtitle='Because reasons'
+				subtitle='Our origin story'
 			/>
 			<Flex flexDirection='column' gap='1rem' p={5}>
-				<Heading>How We Started</Heading>
+				<Heading as='h2'>How We Started</Heading>
 				<Text>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-					eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum
-					nibh tellus molestie nunc non blandit massa. Convallis tellus id
-					interdum velit laoreet id. Tortor pretium viverra suspendisse potenti
-					nullam ac tortor vitae. Diam quam nulla porttitor massa id neque. Dui
-					ut ornare lectus sit amet est placerat. Gravida in fermentum et
-					sollicitudin. Ante metus dictum at tempor commodo ullamcorper a lacus.
-					Iaculis nunc sed augue lacus viverra vitae congue. Eget felis eget
-					nunc lobortis mattis. Id neque aliquam vestibulum morbi blandit cursus
-					risus at ultrices.
+					Oh My Darkness started as an idea between a few friends that were
+					unhappy with the road their previous free company was taking. Though a
+					focus of raiding progression was agreed, the more important goal was
+					to foster an accepting community that promoted positive values.
+					Because of this idea, a few friends decided to break away and formed
+					their own path.
 				</Text>
+				<Heading size='md' as='h3'>
+					Our Community Goals
+				</Heading>
 				<Text>
-					Lectus proin nibh nisl condimentum id venenatis a condimentum vitae.
-					Egestas purus viverra accumsan in nisl. Quam quisque id diam vel quam
-					elementum pulvinar etiam non. Cursus metus aliquam eleifend mi in
-					nulla posuere. Tincidunt augue interdum velit euismod in pellentesque.
-					At ultrices mi tempus imperdiet nulla malesuada pellentesque. Odio
-					aenean sed adipiscing diam. Lectus mauris ultrices eros in cursus
-					turpis massa tincidunt. Eu facilisis sed odio morbi quis commodo odio.
-					At tempor commodo ullamcorper a lacus vestibulum sed arcu non.
-					Elementum facilisis leo vel fringilla est ullamcorper eget. Nibh nisl
-					condimentum id venenatis a condimentum. Massa tempor nec feugiat nisl.
-					Lacus sed viverra tellus in hac habitasse platea dictumst vestibulum.
-					Neque volutpat ac tincidunt vitae semper quis. Tellus cras adipiscing
-					enim eu turpis egestas pretium.
-				</Text>
-				<Text>
-					Morbi tristique senectus et netus et malesuada fames. Neque viverra
-					justo nec ultrices dui sapien eget mi proin. A erat nam at lectus urna
-					duis convallis convallis tellus. Risus quis varius quam quisque id
-					diam vel. Laoreet non curabitur gravida arcu ac tortor. Quis viverra
-					nibh cras pulvinar mattis nunc sed blandit. Mollis nunc sed id semper
-					risus. Est placerat in egestas erat imperdiet sed euismod nisi porta.
-					Quis enim lobortis scelerisque fermentum dui faucibus in ornare quam.
-					Sed blandit libero volutpat sed.
-				</Text>
-				<Heading>Our Community Goals</Heading>
-				<Text>
-					Lectus proin nibh nisl condimentum id venenatis a condimentum vitae.
-					Egestas purus viverra accumsan in nisl. Quam quisque id diam vel quam
-					elementum pulvinar etiam non. Cursus metus aliquam eleifend mi in
-					nulla posuere. Tincidunt augue interdum velit euismod in pellentesque.
-					At ultrices mi tempus imperdiet nulla malesuada pellentesque. Odio
-					aenean sed adipiscing diam. Lectus mauris ultrices eros in cursus
-					turpis massa tincidunt. Eu facilisis sed odio morbi quis commodo odio.
-					At tempor commodo ullamcorper a lacus vestibulum sed arcu non.
-					Elementum facilisis leo vel fringilla est ullamcorper eget. Nibh nisl
-					condimentum id venenatis a condimentum. Massa tempor nec feugiat nisl.
-					Lacus sed viverra tellus in hac habitasse platea dictumst vestibulum.
-					Neque volutpat ac tincidunt vitae semper quis. Tellus cras adipiscing
-					enim eu turpis egestas pretium.
+					We are focused on building a community that accepts all types of
+					people and wants to challenge themselves with on-content progression
+					in a friendly atmosphere. As a group we promote respect above all
+					else, and use this notion to foster a caring community.
 				</Text>
 				<OrderedList>
-					<ListItem>Suck</ListItem>
-					<ListItem>meh</ListItem>
-					<ListItem>Thumb?</ListItem>
+					<ListItem>No harassment or hate speech will be tolerated.</ListItem>
+					<ListItem>
+						Unsafe topics such as religion or politics is not allowed.
+					</ListItem>
 				</OrderedList>
+				<Heading as='h2' size='md'>
+					Our Members and Peak Times
+				</Heading>
 				<Text>
-					Morbi tristique senectus et netus et malesuada fames. Neque viverra
-					justo nec ultrices dui sapien eget mi proin. A erat nam at lectus urna
-					duis convallis convallis tellus. Risus quis varius quam quisque id
-					diam vel. Laoreet non curabitur gravida arcu ac tortor. Quis viverra
-					nibh cras pulvinar mattis nunc sed blandit. Mollis nunc sed id semper
-					risus. Est placerat in egestas erat imperdiet sed euismod nisi porta.
-					Quis enim lobortis scelerisque fermentum dui faucibus in ornare quam.
-					Sed blandit libero volutpat sed.
+					The majority of our group are based on the east coast, and are
+					generally active in the evenings during the week and various times
+					during the weekend.
 				</Text>
-				<Heading>Our Members and Peak Times</Heading>
+				<Heading as='h2' size='md'>
+					Weekly and Seasonal Events
+				</Heading>
 				<Text>
-					Lectus proin nibh nisl condimentum id venenatis a condimentum vitae.
-					Egestas purus viverra accumsan in nisl. Quam quisque id diam vel quam
-					elementum pulvinar etiam non. Cursus metus aliquam eleifend mi in
-					nulla posuere. Tincidunt augue interdum velit euismod in pellentesque.
-					At ultrices mi tempus imperdiet nulla malesuada pellentesque. Odio
-					aenean sed adipiscing diam. Lectus mauris ultrices eros in cursus
-					turpis massa tincidunt. Eu facilisis sed odio morbi quis commodo odio.
-					At tempor commodo ullamcorper a lacus vestibulum sed arcu non.
-					Elementum facilisis leo vel fringilla est ullamcorper eget. Nibh nisl
-					condimentum id venenatis a condimentum. Massa tempor nec feugiat nisl.
-					Lacus sed viverra tellus in hac habitasse platea dictumst vestibulum.
-					Neque volutpat ac tincidunt vitae semper quis. Tellus cras adipiscing
-					enim eu turpis egestas pretium.
+					Our current community focus is on-content raid progression each week,
+					as well as map farming. As our community grows we are interested in
+					adding more activities both in FFXIV and other games.
 				</Text>
+				<Flex flexDir='column' gap='0.5rem'>
+					<Heading as='h3' size='sm'>
+						Current Events
+					</Heading>
+					<UnorderedList>
+						<ListItem>Raiding</ListItem>
+						<ListItem>Map Farming</ListItem>
+						<ListItem>Mount Farming</ListItem>
+					</UnorderedList>
+				</Flex>
+				<Heading as='h2'>Housing and Chest Guidelines</Heading>
 				<Text>
-					Morbi tristique senectus et netus et malesuada fames. Neque viverra
-					justo nec ultrices dui sapien eget mi proin. A erat nam at lectus urna
-					duis convallis convallis tellus. Risus quis varius quam quisque id
-					diam vel. Laoreet non curabitur gravida arcu ac tortor. Quis viverra
-					nibh cras pulvinar mattis nunc sed blandit. Mollis nunc sed id semper
-					risus. Est placerat in egestas erat imperdiet sed euismod nisi porta.
-					Quis enim lobortis scelerisque fermentum dui faucibus in ornare quam.
-					Sed blandit libero volutpat sed.
+					We've recently moved to a larger FC house in the Kugane area and are
+					working on redesigning the house layout. Any design ideas are being
+					handled by Soleil Courtois and can be contacted on our{' '}
+					<Link
+						target='_blank'
+						color='blue.600'
+						href={process.env.DISCORD_INVITE_LINK}
+					>
+						Discord server
+					</Link>
+					.
 				</Text>
-				<Heading>Weekly and Seasonal Events</Heading>
+				<Heading as='h3' size='md'>
+					FC Chest
+				</Heading>
 				<Text>
-					Lectus proin nibh nisl condimentum id venenatis a condimentum vitae.
-					Egestas purus viverra accumsan in nisl. Quam quisque id diam vel quam
-					elementum pulvinar etiam non. Cursus metus aliquam eleifend mi in
-					nulla posuere. Tincidunt augue interdum velit euismod in pellentesque.
-					At ultrices mi tempus imperdiet nulla malesuada pellentesque. Odio
-					aenean sed adipiscing diam. Lectus mauris ultrices eros in cursus
-					turpis massa tincidunt. Eu facilisis sed odio morbi quis commodo odio.
-					At tempor commodo ullamcorper a lacus vestibulum sed arcu non.
-					Elementum facilisis leo vel fringilla est ullamcorper eget. Nibh nisl
-					condimentum id venenatis a condimentum. Massa tempor nec feugiat nisl.
-					Lacus sed viverra tellus in hac habitasse platea dictumst vestibulum.
-					Neque volutpat ac tincidunt vitae semper quis. Tellus cras adipiscing
-					enim eu turpis egestas pretium.
+					As a general rule the chest is open to other players as long as
+					everyone contributes to replenishing what is there. We have several
+					crafters in our group currently so crystals and crafting materials are
+					considered at a premium: generally you can use what is there but
+					please be considerate of the other member's needs.
 				</Text>
 				<UnorderedList>
-					<ListItem>One</ListItem>
-					<ListItem>Two</ListItem>
-					<ListItem>Three</ListItem>
-					<ListItem>Four</ListItem>
+					<ListItem>
+						For consummable usage, please ask an officer before withdrawing
+						large stacks.
+					</ListItem>
+					<ListItem>Gil withdrawals are restricted to officer use.</ListItem>
+					<ListItem>
+						Restricted items in later tabs are available with an officer's
+						approval. Please communicate this in the{' '}
+						<Link
+							target='_blank'
+							color='blue.600'
+							href={process.env.DISCORD_INVITE_LINK}
+						>
+							Discord server
+						</Link>{' '}
+						or in FC chat.
+					</ListItem>
 				</UnorderedList>
-				<Heading>Housing</Heading>
+				<Heading as='h2'>Raiding</Heading>
 				<Text>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-					eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum
-					nibh tellus molestie nunc non blandit massa. Convallis tellus id
-					interdum velit laoreet id. Tortor pretium viverra suspendisse potenti
-					nullam ac tortor vitae. Diam quam nulla porttitor massa id neque. Dui
-					ut ornare lectus sit amet est placerat. Gravida in fermentum et
-					sollicitudin. Ante metus dictum at tempor commodo ullamcorper a lacus.
-					Iaculis nunc sed augue lacus viverra vitae congue. Eget felis eget
-					nunc lobortis mattis. Id neque aliquam vestibulum morbi blandit cursus
-					risus at ultrices.
+					We have one static raid group and working on expanding with more
+					members for both subtitutions and additional raid groups. Common
+					courtesy rules apply when discussing raid topics and during events: we
+					make sure to have fun while raiding but maintain focus on making
+					progression.
 				</Text>
-				<UnorderedList>
-					<ListItem>One</ListItem>
-					<ListItem>Two</ListItem>
-					<ListItem>Three</ListItem>
-					<ListItem>Four</ListItem>
-				</UnorderedList>
-				<Heading>FC Chest</Heading>
+				<Flex flexDir='column' gap='0.5rem'>
+					<Heading as='h3' size='sm'>
+						Raiding Guidelines
+					</Heading>
+					<UnorderedList>
+						<ListItem>Raid nights are at least twice a week.</ListItem>
+						<ListItem>
+							Subtitute players are recommended to be able to flex within two
+							different raid roles (ex. healer, tank, ranged DPS, etc.)
+						</ListItem>
+						<ListItem>
+							Streaming terms of service rules apply during raid times.
+						</ListItem>
+					</UnorderedList>
+				</Flex>
 				<Text>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-					eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum
-					nibh tellus molestie nunc non blandit massa. Convallis tellus id
-					interdum velit laoreet id. Tortor pretium viverra suspendisse potenti
-					nullam ac tortor vitae. Diam quam nulla porttitor massa id neque. Dui
-					ut ornare lectus sit amet est placerat. Gravida in fermentum et
-					sollicitudin. Ante metus dictum at tempor commodo ullamcorper a lacus.
-					Iaculis nunc sed augue lacus viverra vitae congue. Eget felis eget
-					nunc lobortis mattis. Id neque aliquam vestibulum morbi blandit cursus
-					risus at ultrices.
-				</Text>
-				<UnorderedList>
-					<ListItem>One</ListItem>
-					<ListItem>Two</ListItem>
-					<ListItem>Three</ListItem>
-					<ListItem>Four</ListItem>
-				</UnorderedList>
-				<Heading>Raiding</Heading>
-				<Text>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-					eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum
-					nibh tellus molestie nunc non blandit massa. Convallis tellus id
-					interdum velit laoreet id. Tortor pretium viverra suspendisse potenti
-					nullam ac tortor vitae. Diam quam nulla porttitor massa id neque. Dui
-					ut ornare lectus sit amet est placerat. Gravida in fermentum et
-					sollicitudin. Ante metus dictum at tempor commodo ullamcorper a lacus.
-					Iaculis nunc sed augue lacus viverra vitae congue. Eget felis eget
-					nunc lobortis mattis. Id neque aliquam vestibulum morbi blandit cursus
-					risus at ultrices.
-				</Text>
-				<UnorderedList>
-					<ListItem>One</ListItem>
-					<ListItem>Two</ListItem>
-					<ListItem>Three</ListItem>
-					<ListItem>Four</ListItem>
-				</UnorderedList>
-				<Text>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-					eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum
-					nibh tellus molestie nunc non blandit massa. Convallis tellus id
-					interdum velit laoreet id. Tortor pretium viverra suspendisse potenti
-					nullam ac tortor vitae. Diam quam nulla porttitor massa id neque. Dui
-					ut ornare lectus sit amet est placerat. Gravida in fermentum et
-					sollicitudin. Ante metus dictum at tempor commodo ullamcorper a lacus.
-					Iaculis nunc sed augue lacus viverra vitae congue. Eget felis eget
-					nunc lobortis mattis. Id neque aliquam vestibulum morbi blandit cursus
-					risus at ultrices.
+					Any interests in joining a raid group should be forwarded to the raid
+					channel of our{' '}
+					<Link
+						target='_blank'
+						color='blue.600'
+						href={process.env.DISCORD_INVITE_LINK}
+					>
+						Discord server
+					</Link>
+					.
 				</Text>
 			</Flex>
 			<Footer />
