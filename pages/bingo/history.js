@@ -75,7 +75,7 @@ const BingoHistoryPage = () => {
 			<Flex
 				flexDirection='column'
 				gap='1.5rem'
-				justify='center'
+				// justify='center'
 				align='center'
 				minH='100vh'
 				p={4}
@@ -93,7 +93,7 @@ const BingoHistoryPage = () => {
 					</Button>
 				</Link>
 				<Modal isOpen={isOpen} onClose={onClose} cardValues={modalValues} />
-				<Flex
+				{/* <Flex
 					gap='1rem'
 					flexDirection='column'
 					border='1px solid'
@@ -121,7 +121,7 @@ const BingoHistoryPage = () => {
 						/>
 					)}
 				</Flex>
-				<Divider />
+				<Divider /> */}
 				<Heading>Bingo History</Heading>
 				<Divider />
 				{gameHistory &&
