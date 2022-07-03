@@ -19,6 +19,7 @@ const initialState = {
 
 const ContactForm = () => {
 	const [formValues, setFormValues] = useState(initialState);
+	const [loading, setLoading] = useState(false);
 	const toast = useToast();
 
 	const handleChange = (e) => {
@@ -28,6 +29,7 @@ const ContactForm = () => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+		setLoading(true);
 
 		try {
 			const response = await fetch(`api/messages`, {
@@ -41,6 +43,7 @@ const ContactForm = () => {
 			const { message } = await response.json();
 
 			if (response.ok) {
+				setLoading(false);
 				toast({
 					title: 'Success',
 					description: message,
@@ -48,6 +51,7 @@ const ContactForm = () => {
 					isClosable: true,
 				});
 			} else {
+				setLoading(false);
 				toast({
 					title: 'Error',
 					description: message,
@@ -116,7 +120,13 @@ const ContactForm = () => {
 					onChange={handleChange}
 				/>
 			</FormControl>
-			<Button colorScheme='teal' w='full' type='submit'>
+			<Button
+				colorScheme='teal'
+				w='full'
+				type='submit'
+				isLoading={loading}
+				loadingText='Sending...'
+			>
 				Submit
 			</Button>
 		</VStack>
