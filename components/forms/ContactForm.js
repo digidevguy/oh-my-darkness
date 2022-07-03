@@ -68,7 +68,7 @@ const ContactForm = () => {
 			p={12}
 			rounded={[0, 6]}
 			boxShadow='lg'
-			color='white'
+			color={useColorModeValue('black', 'white')}
 			mb={3}
 			onSubmit={handleSubmit}
 		>
