@@ -19,7 +19,7 @@ const CallToAction = () => {
 					Join us on Discord!
 				</Heading>
 				<Button
-					as={Link}
+					as='a'
 					aria-label='Discord invite link'
 					href={process.env.DISCORD_INVITE_LINK}
 					target='_blank'
