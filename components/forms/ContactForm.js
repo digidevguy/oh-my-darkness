@@ -14,7 +14,7 @@ const initialState = {
 	character: '',
 	serverName: '',
 	activeTimes: '',
-	messages: '',
+	message: '',
 };
 
 const ContactForm = () => {
