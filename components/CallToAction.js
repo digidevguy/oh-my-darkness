@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Heading, VStack } from '@chakra-ui/react';
+import { Box, Button, Flex, Heading, Link, VStack } from '@chakra-ui/react';
 import Image from 'next/image';
 
 const CallToAction = () => {
@@ -19,7 +19,7 @@ const CallToAction = () => {
 					Join us on Discord!
 				</Heading>
 				<Button
-					as='a'
+					as={Link}
 					aria-label='Discord invite link'
 					href={process.env.DISCORD_INVITE_LINK}
 					target='_blank'
