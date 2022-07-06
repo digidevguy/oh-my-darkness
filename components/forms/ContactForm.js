@@ -104,7 +104,7 @@ const ContactForm = () => {
 				<Input
 					placeholder='Active times (ex. 08:00 - 05:00)'
 					variant='filled'
-					type='email'
+					type='text'
 					mb={3}
 					name='activeTimes'
 					value={formValues.activeTimes}
