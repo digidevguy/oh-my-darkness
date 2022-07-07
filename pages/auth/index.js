@@ -36,7 +36,6 @@ const AuthPage = () => {
 			password: formValues.password,
 		});
 
-		console.log(result);
 		if (!result.error) {
 			router.replace('/admin/dashboard');
 		} else {

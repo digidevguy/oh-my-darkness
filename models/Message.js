@@ -31,6 +31,9 @@ const MessageSchema = mongoose.Schema({
 		dateUpdated: {
 			type: Date,
 		},
+		note: {
+			type: String,
+		},
 	},
 });
 

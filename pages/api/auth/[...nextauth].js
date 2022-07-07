@@ -14,7 +14,7 @@ export const authOptions = {
 				username: { label: 'Username', type: 'text', placeholder: 'username' },
 				password: { label: 'Password', type: 'password' },
 			},
-			async authorize(credentials, req) {
+			async authorize(credentials) {
 				const client = await connectToDatabase();
 
 				const userCollection = client.db().collection('users');
@@ -47,11 +47,16 @@ export const authOptions = {
 		}),
 	],
 	callbacks: {
-		async jwt({ token, account }) {
+		async jwt({ token, account, user }) {
 			if (account) {
 				token.accessToken = account.access_token;
+				token.user = user;
 			}
 			return token;
+		},
+		async session({ session, token }) {
+			session.user = token.user;
+			return session;
 		},
 	},
 };
