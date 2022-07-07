@@ -26,16 +26,22 @@ const MessageList = () => {
 		fetchMessages();
 	}, []);
 
+	const handleUpdate = (id) => {
+		// Send request to update record
+		// Parse repsonse for success
+		// If success, add status change flag to card
+		// If error, post error in toast
+	};
+
+	const handleClose = (id) => {
+		// Send request to update record
+		// Parse repsonse for success
+		// If success, add status change flag to card, then push to completed queue
+		// If error, post error in toast
+	};
+
 	return (
-		<Flex
-			minH='100vh'
-			align='center'
-			justify='center'
-			flexDir='column'
-			gap='1rem'
-			px={2}
-			py={3}
-		>
+		<Flex minH='100vh' align='center' flexDir='column' gap='1rem' px={2} py={3}>
 			{isLoading ? (
 				<Spinner
 					alignSelf='center'
@@ -55,6 +61,8 @@ const MessageList = () => {
 							actimeTimes={activeTimes}
 							serverName={serverName}
 							message={message}
+							onUpdate={handleUpdate}
+							onClose={handleClose}
 						/>
 					)
 				)
