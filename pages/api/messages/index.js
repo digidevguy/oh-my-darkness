@@ -12,7 +12,12 @@ const handler = async (req, res) => {
 			});
 		}
 
-		res.status(200).json({ message: 'Messages loaded!', messages });
+		res
+			.status(200)
+			.json({
+				message: 'Messages loaded!',
+				messages: messages.map((msg) => msg.toObject({ getters: true })),
+			});
 	}
 
 	if (req.method === 'POST') {
@@ -24,6 +29,7 @@ const handler = async (req, res) => {
 			serverName,
 			message,
 			date: new Date(),
+			status: 'pending',
 		});
 
 		try {

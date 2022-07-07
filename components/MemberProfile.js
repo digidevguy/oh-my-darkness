@@ -1,5 +1,13 @@
 import Image from 'next/image';
-import { Box, Button, Divider, Flex, Heading, Text } from '@chakra-ui/react';
+import {
+	Box,
+	Button,
+	Divider,
+	Flex,
+	Heading,
+	Text,
+	useColorModeValue,
+} from '@chakra-ui/react';
 import { FaTwitch } from 'react-icons/fa';
 
 const MemberProfile = ({
@@ -25,8 +33,10 @@ const MemberProfile = ({
 			align='center'
 			gap='1rem'
 			border='1px'
-			borderColor='gray.200'
+			borderColor={useColorModeValue('gray.300', 'gray.600')}
 			boxShadow='md'
+			rounded={5}
+			bg={useColorModeValue('gray.100', 'gray.700')}
 		>
 			<Box w={['full', '50%']} rounded={10} overflow='hidden'>
 				<Image src={src} width={width} height={height} layout='responsive' />

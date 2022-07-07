@@ -20,6 +20,18 @@ const MessageSchema = mongoose.Schema({
 		type: String,
 		required: true,
 	},
+	status: {
+		type: String,
+		required: true,
+	},
+	updatedBy: {
+		username: {
+			type: String,
+		},
+		dateUpdated: {
+			type: Date,
+		},
+	},
 });
 
 export default mongoose.models.Message ||

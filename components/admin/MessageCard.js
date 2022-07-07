@@ -19,6 +19,8 @@ const MessageCard = ({ id, character, serverName, date, message }) => {
 			boxShadow='md'
 			flexDir='column'
 			gap='1.25rem'
+			minW='sm'
+			maxW='3xl'
 		>
 			<HStack>
 				<HStack>
@@ -32,7 +34,9 @@ const MessageCard = ({ id, character, serverName, date, message }) => {
 			<Divider maxW='75%' m='auto' />
 			<Text whiteSpace='pre-line'>{message}</Text>
 			<ButtonGroup alignSelf={['center', 'end']}>
-				<Button colorScheme='blue'>Update</Button>
+				<Button colorScheme='blue' isDisabled>
+					Update
+				</Button>
 				<Button colorScheme='red' variant='outline' isDisabled>
 					Close
 				</Button>
