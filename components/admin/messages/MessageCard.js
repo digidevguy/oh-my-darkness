@@ -7,7 +7,7 @@ import {
 	Spacer,
 	Text,
 } from '@chakra-ui/react';
-import { calculateDiffInDays } from '../../util';
+import { calculateDiffInDays } from '../../../util';
 
 const MessageCard = ({ id, character, serverName, date, message }) => {
 	return (
