@@ -12,15 +12,18 @@ import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 
 import MessageList from '../../components/admin/messages/MessageList';
+import { useEffect } from 'react';
 
 const AdminDashboard = () => {
 	const router = useRouter();
-	const { status } = useSession({
+	const { data: session, status } = useSession({
 		required: true,
 		onUnauthenticated() {
 			router.replace('/auth');
 		},
 	});
+
+	useEffect(() => console.log(session));
 
 	if (status === 'loading') {
 		return (
@@ -62,3 +65,8 @@ const AdminDashboard = () => {
 };
 
 export default AdminDashboard;
+
+AdminDashboard.auth = {
+	admin: true,
+	unauthorized: '/auth',
+};

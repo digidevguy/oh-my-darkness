@@ -10,18 +10,18 @@ import Introduction from '../components/Introduction';
 export default function Home() {
 	const [status, setStatus] = useState();
 
-	useEffect(() => {
-		const fetchStatus = async () => {
-			const res = await fetch('https://api.twitch.tv/helix/streams', {
-				headers: { 'Content-Type': 'application/json' },
-			});
-			const { data } = await res.json();
-			setStatus(data);
-		};
-		fetchStatus();
-	}, []);
+	// useEffect(() => {
+	// 	const fetchStatus = async () => {
+	// 		const res = await fetch('https://api.twitch.tv/helix/streams', {
+	// 			headers: { 'Content-Type': 'application/json' },
+	// 		});
+	// 		const { data } = await res.json();
+	// 		setStatus(data);
+	// 	};
+	// 	fetchStatus();
+	// }, []);
 
-	useEffect(() => console.log(status), [status]);
+	// useEffect(() => console.log(status), [status]);
 
 	return (
 		<>

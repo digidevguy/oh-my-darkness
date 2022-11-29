@@ -42,6 +42,7 @@ export const authOptions = {
 				return {
 					username: user.username,
 					email: user.email,
+					admin: user.admin,
 				};
 			},
 		}),
